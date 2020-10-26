@@ -1,45 +1,38 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Baker Street Escape Room Adventures
+* This site is for a fictional escape room (these are 'puzzle rooms' where you go in as a team and have to race the set timer to complete all of the challenges or puzzles and 'escape' in the alloted time) that has a Sherlock Holmes theme. Customers will be able to view the an explanation as to what an escape room is, the available rooms, their available dates and times and be able to book these time slots.
 
-Welcome Nick,
+## UX
+* This site is aimed at people who are experienced escape room players and for people who jave never played one before and may not know what they are.
+### User Stories
+* As a customer I want to be able to easily navigate the site so that I can enjoy my experience on the website
+* As a customer I want to be able to see what products the escape room has to offer so that I can decide if I would like to visit.
+* As a customer I want to be able to see individual escape room challenges in more detail so that I can decide which one I like the best.
+* As a customer I want to be able to view the escape room experience options and available dates and times so that I can book an escape room experience on the date and time I would like.
+* As a customer I want to be able to easily pay for my selected option so that I can decide if I would like to visit.
+* As a customer I want to be able to see what products the escape room has to offer so that I can visit the escape room by paying online in advance.
+*  As a customer I want to recieve an email when I have completed my booking so that I know that my booking was successful and be reminded of the time and date of my booked expeirence.
+* As a customer I want to be able to register an account so that I can access the areas only those with accounts can access, view my info .
+* As a customer I want to recieve an email once I have registered for my account so that I know the registration ws successful.	
+* As a customer I want to be able to easily login and out of my acount to see my personal info, past/future bookings. See my score/time from previous visits
+* As a customer I would like to see a leaderboard so I can see what times other teams got so that I can compete with them
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+* As a  member of staff I want to be able to Login and logout so that I can change available times, cancel/amend bookings and complete other administrative duties.
 
-## Gitpod Reminders
+## Features
+In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Existing Features
+Feature 1 - allows users X to achieve Y, by having them fill out Z
+...
+For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
-`python3 -m http.server`
+In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
-A blue button should appear to click: *Make Public*,
+Features Left to Implement
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Credits
+### Content
+### Media
 
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+### Acknowledgements
