@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link links" href="#">Home </a>
+            <a class="nav-link links" href="{% url 'home' %}">Home </a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -47,13 +47,10 @@
               Our Rooms
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Watson!</a>
-              <a class="dropdown-item" href="#">
-                A Study In Pink</a
-              >
-              <a class="dropdown-item" href="#"
-                >Moriartys Madness</a
-              >
+              <a class="dropdown-item" href="{% url 'our_rooms' %}">Watson!</a>
+              <a class="dropdown-item" href="{% url 'our_rooms' %}">A Study In Pink</a>
+              <a class="dropdown-item" href="{% url 'our_rooms' %}">Moriartys Madness</a>
+                
             </div>
           </li>
           <li class="nav-item">
@@ -62,12 +59,12 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link links" href="#" tabindex="-1"
+            <a class="nav-link links" href="{% url 'leaderboards' %}" tabindex="-1"
               >Leaderboards</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link links" href="#">Contact Us</a>
+            <a class="nav-link links" href="{% url 'contact' %}">Contact Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link links" href="#">Login</a>
