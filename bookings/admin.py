@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import Rooms
 
-# Register your models here.
+
+class RoomsAdmin(admin.ModelAdmin):
+    list_display = (
+        'room_title',
+    )
+
+    ordering = ('pk',)
+
+
+admin.site.register(Rooms, RoomsAdmin)
