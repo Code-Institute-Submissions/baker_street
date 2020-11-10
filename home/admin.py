@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Leaderboards
 
-# Register your models here.
+
+admin.site.register(Leaderboards)

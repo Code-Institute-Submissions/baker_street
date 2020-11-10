@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Leaderboards
 
 
 def index(request):
@@ -14,4 +15,9 @@ def contact(request):
 
 
 def leaderboards(request):
-    return render(request, 'home/leaderboards.html')
+    leaderboards = Leaderboards.objects.all()
+
+    context = {
+        'leaderboards': leaderboards,
+    }
+    return render(request, 'home/leaderboards.html', context)

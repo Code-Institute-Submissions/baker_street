@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container text-center general-text">
   <div class="row">
     <div class="col">
@@ -10,83 +8,22 @@
   </div>
 </div>
 
-<div class="container text-center general-text">
-  <div class="row">
-    <div class="col">
-      <h2><u>Watson!</u></h2>
+<div class="container">
+    {% for leaderboards in leaderboards %}
+    <div class="row">
+      <div class="col">{{ leaderboards.room_name }}</div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <p><u>Team Name</u></p>
-      <ol>
-        <li>Bananarama</li>
-        <li>Foo Fighters</li>
-        <li>Q E Who?</li>
-      </ol>
+    <div class="row">
+      <div class="col-4">1- Team Name: {{ leaderboards.team_1_name }}</div>
+      <div class="col-4">2- Team Name: {{ leaderboards.team_2_name }}</div>
+      <div class="col-4">3- Team Name: {{ leaderboards.team_3_name }}</div>
     </div>
-    <div class="col-6">
-      <p><u>Time</u></p>
-      <ol>
-        <li>39mins 21 secs</li>
-        <li>45 mins 50 secs</li>
-        <li>46 mins 17 secs</li>
-      </ol>
+    <div class="row">
+      <div class="col-4">Time: {{ leaderboards.team_1_time }}</div>
+      <div class="col-4">Time: {{ leaderboards.team_2_time }}</div>
+      <div class="col-4">Time: {{ leaderboards.team_3_time }}</div>
     </div>
-  </div>
+    {% endfor %}
 </div>
 
-<hr />
-<div class="container text-center general-text">
-  <div class="row">
-    <div class="col">
-      <h2><u>A Study In Pink</u></h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <p><u>Team Name</u></p>
-      <ol>
-        <li>Bananarama</li>
-        <li>Foo Fighters</li>
-        <li>Q E Who?</li>
-      </ol>
-    </div>
-    <div class="col-6">
-      <p><u>Time</u></p>
-      <ol>
-        <li>39mins 21 secs</li>
-        <li>45 mins 50 secs</li>
-        <li>46 mins 17 secs</li>
-      </ol>
-    </div>
-  </div>
-</div>
-
-<hr />
-<div class="container text-center general-text">
-  <div class="row">
-    <div class="col">
-      <h2><u>Moriartys Madness</u></h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <p><u>Team Name</u></p>
-      <ol>
-        <li>Bananarama</li>
-        <li>Foo Fighters</li>
-        <li>Q E Who?</li>
-      </ol>
-    </div>
-    <div class="col-6">
-      <p><u>Time</u></p>
-      <ol>
-        <li>39mins 21 secs</li>
-        <li>45 mins 50 secs</li>
-        <li>46 mins 17 secs</li>
-      </ol>
-    </div>
-  </div>
-</div>
 {% endblock %}
