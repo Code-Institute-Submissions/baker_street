@@ -4,25 +4,35 @@
   <div class="row">
     <div class="col">
       <h2><u>Leaderboards</u></h2>
+      <br>
+      <div class="row">
+      <div class="col"><p>These teams have  got themselves onto the scoreboard for beating our challenges. Do you think you have what it takes to get you and your team up here and into the hall of fame?</p></div>
+      </div>
+      <hr>
+      <br>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container text-center general-text">
     {% for leaderboards in leaderboards %}
     <div class="row">
       <div class="col">{{ leaderboards.room_name }}</div>
     </div>
+    <br>
     <div class="row">
-      <div class="col-4">1- Team Name: {{ leaderboards.team_1_name }}</div>
-      <div class="col-4">2- Team Name: {{ leaderboards.team_2_name }}</div>
-      <div class="col-4">3- Team Name: {{ leaderboards.team_3_name }}</div>
+      <div class="col-4">1st- {{ leaderboards.team_1_name }}</div>
+      <div class="col-4">2nd- {{ leaderboards.team_2_name }}</div>
+      <div class="col-4">3rd- {{ leaderboards.team_3_name }}</div>
     </div>
     <div class="row">
       <div class="col-4">Time: {{ leaderboards.team_1_time }}</div>
       <div class="col-4">Time: {{ leaderboards.team_2_time }}</div>
       <div class="col-4">Time: {{ leaderboards.team_3_time }}</div>
     </div>
+    <br>
+    <hr>
+    <br>
     {% endfor %}
 </div>
 
