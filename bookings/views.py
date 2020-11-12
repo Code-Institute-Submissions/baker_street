@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Rooms
+from .forms import Booking
 
 
 def bookings(request):
@@ -14,13 +15,12 @@ def bookings(request):
 
 
 def bookings_watson(request):
-
     watson = Rooms.objects.filter(pk=1)
-    print(watson)
+    form = Booking()
     context = {
         'watson': watson,
+        'form': form,
     }
-
     return render(request, 'bookings/bookings_watson.html', context)
 
 

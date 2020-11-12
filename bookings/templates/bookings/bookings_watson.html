@@ -10,7 +10,14 @@
     <div class="col-4">{{ item.room_image }}</div>
     {% endfor %}
   </div>
+  
 </div>
+<form action="{% url 'bag' %}" method="POST">
+{% csrf_token %}
+{{ form.num_of_players }}
+{{ form.date }}
+{{ form.time }}
 
-
- {% endblock %}
+<input type="submit">
+</form>
+{% endblock %}
