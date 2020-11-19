@@ -45,6 +45,3 @@ def bookings_moriarty(request):
 
     return render(request, 'bookings/bookings_moriarty.html', context)
 
-
-def bag(request):
-    return render(request, 'bookings/bag.html')
