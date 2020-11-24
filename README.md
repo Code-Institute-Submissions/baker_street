@@ -1,8 +1,7 @@
 # Baker Street Escape Room Adventures
 * This site is for a fictional escape room (these are 'puzzle rooms' where you go in as a team and have to race the set timer to complete all of the challenges or puzzles and 'escape' in the alloted time) that has a Sherlock Holmes theme. Customers will be able to view the an explanation as to what an escape room is, the available rooms, their available dates and times and be able to book these time slots.
-
 ## UX
-* This site is aimed at people who are experienced escape room players and for people who jave never played one before and may not know what they are.
+* This site is aimed at people who are experienced escape room players and for people who have never played one before and may not know what they are.
 ### User Stories
 * As a customer I want to be able to easily navigate the site so that I can enjoy my experience on the website
 * As a customer I want to be able to see what products the escape room has to offer so that I can decide if I would like to visit.
@@ -15,7 +14,6 @@
 * As a customer I want to recieve an email once I have registered for my account so that I know the registration ws successful.	
 * As a customer I want to be able to easily login and out of my acount to see my personal info, past/future bookings. See my score/time from previous visits
 * As a customer I would like to see a leaderboard so I can see what times other teams got so that I can compete with them
-
 * As a  member of staff I want to be able to Login and logout so that I can change available times, cancel/amend bookings and complete other administrative duties.
 
 ## Features
