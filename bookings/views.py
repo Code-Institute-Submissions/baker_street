@@ -19,6 +19,7 @@ def book_a_room(request, room_id):
     form = Booking()
     context = {
         'form': form,
+        'room': room,
     }
     return render(request, 'bookings/book_a_room.html', context)
 
