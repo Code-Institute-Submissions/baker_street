@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container"><div class="row">{% for room in rooms %}
+<div class="col">{{ room.room_title }}</div></div>{% endfor %}</div>
 <div class="container">
   <div class="row">
     <div class="col">
