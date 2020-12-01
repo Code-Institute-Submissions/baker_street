@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <form action="{% url 'add_to_bag' 1 %}" method="POST" class="general-text">
+      <form action="{% url 'add_to_bag' id %}" method="POST" class="general-text">
         {% csrf_token %} {{ form.num_of_players }} {{ form.date }} {{ form.time }}
         <input type="submit" />
       </form>

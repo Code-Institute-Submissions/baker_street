@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% load static %} {% block content %}
     {% if bag_items %}
-        {% for items in bag_items %}
-            {{ item.bag_items.item_id}}
-        {% endfor %}
-    {% else%}
+        <p>Number of players: {{ num_of_players }}</p> 
+        <p>Date: {{ date }}</p> 
+        <p>Time: {{ time }}</p> 
+    {% else%} 
     <p> You have no bookings</p>
     {% endif %}
 

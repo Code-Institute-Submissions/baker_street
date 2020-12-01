@@ -22,5 +22,8 @@ def bag_contents(request):
             })
     context = {
         'bag_items': bag_items,
+        'num_of_players': num_of_players,
+        'date': date,
+        'time': time,
     }
     return context
