@@ -1,4 +1,3 @@
-from bookings.models import Room_Booking
 from django.shortcuts import get_object_or_404
 from bookings.models import Rooms
 
@@ -6,6 +5,9 @@ from bookings.models import Rooms
 def bag_contents(request):
 
     bag_items = []
+    num_of_players = 0
+    date = 0
+    time = 0
     bag = request.session.get('bag', {})
 
     for item_id, booking_details in bag.items():

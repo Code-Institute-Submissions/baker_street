@@ -14,7 +14,6 @@ def bookings(request):
 
 
 def book_a_room(request, room_id):
-    rooms = Rooms.objects.all()
     room = get_object_or_404(Rooms, pk=room_id)
     form = Booking()
     context = {

@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404
-from bookings.views import Rooms
+from django.shortcuts import render
 
 
 def bag(request):
@@ -22,3 +21,11 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return render(request, 'bag/bag.html')
+
+
+def delete_from_bag(request, item_id):
+    bag = request.session.get('bag', {})
+    bag.pop(item_id)
+    request.session['bag'] = bag
+    return render(request, 'bag/bag.html')
+    print(delete_from_bag)

@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% load static %} {% block content %}
-    {% if bag_items %}
-        <p>Number of players: {{ num_of_players }}</p> 
-        <p>Date: {{ date }}</p> 
-        <p>Time: {{ time }}</p> 
-    {% else%} 
-    <p> You have no bookings</p>
-    {% endif %}
+<div class="container general-text">
+  <div class="row">
+    <div class="col">
+      {% if bag_items %} {% for item in bag_items %} {{ bag_items }}
+      <p>Room: {{ item.room }}</p>
+      <p>Number of players: {{ item.num_of_players }}</p>
+      <p>Date: {{ item.date }}</p>
+      <p>Time: {{ item.time }}</p>
+      <a class="btn btn-primary" id="delete_item{{ bag }}">Delete</a>
+      {% endfor %} {% else%}
+      <p>You have no bookings</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
 
+<script>
+  document.getElementById("delete_item").onclick = function () {
+    deleteItem();
+  };
+  function deleteItem() {
+    var session = session.remove();
+  }
+</script>
 {% endblock %}
