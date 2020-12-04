@@ -24,8 +24,9 @@ def add_to_bag(request, item_id):
 
 
 def delete_from_bag(request, item_id):
-    bag = request.session.get('bag', {})
-    bag.pop(item_id)
-    request.session['bag'] = bag
-    return render(request, 'bag/bag.html')
-    print(delete_from_bag)
+    if 'item_id' in request.POST:
+        bag = request.session.get('bag', {})
+        bag.pop(item_id)
+        request.session['bag'] = bag
+        return render(request, 'bag/bag.html')
+        print(delete_from_bag)

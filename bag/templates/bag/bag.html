@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% load static %} {% block content %}
+
 <div class="container general-text">
   <div class="row">
     <div class="col">
@@ -8,7 +9,7 @@
       <p>Number of players: {{ item.num_of_players }}</p>
       <p>Date: {{ item.date }}</p>
       <p>Time: {{ item.time }}</p>
-      <a class="btn btn-primary" id="delete_item{{ bag }}">Delete</a>
+      <a class="btn btn-primary delete_item" id="delete_{{ item.item_id }}">Delete</a>
       {% endfor %} {% else%}
       <p>You have no bookings</p>
       {% endif %}
@@ -17,11 +18,18 @@
 </div>
 
 <script>
-  document.getElementById("delete_item").onclick = function () {
-    deleteItem();
-  };
-  function deleteItem() {
-    var session = session.remove();
-  }
+$('.delete_item').click(function() {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('delete_')[1];
+        var url = `/bag/delete/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken}
+
+           $.post(url, data)
+            .done(function() {
+             location.reload();
+         });
+    })
 </script>
 {% endblock %}
+
+ 
