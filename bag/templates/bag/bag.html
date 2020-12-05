@@ -19,16 +19,18 @@
 
 <script>
 $('.delete_item').click(function() {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('delete_')[1];
-        var url = `/bag/delete/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken}
-
-           $.post(url, data)
-            .done(function() {
-             location.reload();
-         });
-    })
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr('id').split('delete_')[1];
+    var url = `/bag/delete/${itemId}/`;
+    var data = {'csrfmiddlewaretoken': csrfToken};
+    
+    $.post(url, data).done(function() {
+        console.log("post reached")
+        location.reload();
+    }).fail( function() {
+        console.log("post failed");
+    });
+});
 </script>
 {% endblock %}
 
