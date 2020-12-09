@@ -20,7 +20,7 @@ def bag_contents(request):
             time = booking_details['time']
             bag_items.append({
                 'item_id': item_id,
-                'room': room,
+                'room_title': room.room_title,
                 'num_of_players': num_of_players,
                 'date': date,
                 'time': time,
@@ -32,7 +32,7 @@ def bag_contents(request):
             time = booking_details['time']
             bag_items.append({
                 'item_id': item_id,
-                'room': room,
+                'room_title': room.room_title,
                 'num_of_players': num_of_players,
                 'date': date,
                 'time': time,

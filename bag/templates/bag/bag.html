@@ -3,16 +3,43 @@
 
 <div class="container general-text">
   <div class="row">
-    <div class="col">
-      {% if bag_items %} {% for item in bag_items %} {{ bag_items }}
-      <p>Room: {{ item.room }}</p>
-      <p>Number of players: {{ item.num_of_players }}</p>
-      <p>Date: {{ item.date }}</p>
-      <p>Time: {{ item.time }}</p>
+    <div class="col">{{ bag_items }}
+
+      {% if bag_items %} {% for item in bag_items %} 
+      <p>Room: {{ item.room_title }}</p>
+          <form>
+    <label for="num_of_players">Number of players:</label>
+        <select id="num_of_players" name="num_of_players">
+        <option value="{{ item.num_of_players }}" selected="">{{ item.num_of_players }}</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="{{ item.date }}">
+    <label for="time">Number of players:</label>
+        <select id="time" name="time">
+        <option value="{{ item.time }}" selected>{{ item.time }}</option>
+        <option value="1000">1000</option>
+        <option value="1130">1130</option>
+        <option value="1300">1300</option>
+        <option value="1430">1430</option>
+        <option value="1600">1600</option>
+        <option value="1730">1730</option>
+        <option value="1900">1900</option>
+        <option value="2030">2030</option>
+        <option value="2200">2200</option>
+        </select>
+        </form>  
       <a class="btn btn-primary delete_item" id="delete_{{ item.item_id }}">Delete</a>
       {% endfor %} {% else%}
       <p>You have no bookings</p>
       {% endif %}
+            <!-- <p>Number of players: {{ item.num_of_players }} </p>
+      <p>Date: {{ item.date }} </p>
+      <p>Time: {{ item.time }} </p> -->
     </div>
   </div>
 </div>

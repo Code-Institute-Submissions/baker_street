@@ -6,9 +6,8 @@ from .forms import Booking
 def bookings(request):
 
     rooms = Rooms.objects.all()
-    print(rooms)
     context = {
-        'rooms': rooms,
+        'room_info': rooms,
     }
     return render(request, 'bookings/bookings.html', context)
 
@@ -17,6 +16,7 @@ def book_a_room(request, room_id):
     room = get_object_or_404(Rooms, pk=room_id)
     form = Booking()
     context = {
+        'room_title': room.room_title,
         'form': form,
         'id': room.id,
     }

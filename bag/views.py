@@ -1,8 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import (
+    render, HttpResponse, get_object_or_404, redirect, reverse
+    )
+from django.contrib import messages
+from bookings.models import Rooms
+from bookings.forms import Booking
 
 
 def bag(request):
-    return render(request, 'bag/bag.html')
+    form = Booking()
+    context = {
+        'edit_form': form
+    }
+    return render(request, 'bag/bag.html', context)
 
 
 def add_to_bag(request, item_id):
@@ -20,13 +29,18 @@ def add_to_bag(request, item_id):
     bag[item_id] = booking_details
 
     request.session['bag'] = bag
-    return render(request, 'bag/bag.html')
+    return redirect(reverse('bag'))
 
 
 def delete_from_bag(request, item_id):
-    if 'item_id' in request.POST:
+
+    try:
+        room = get_object_or_404(Rooms, pk=item_id)
         bag = request.session.get('bag', {})
         bag.pop(item_id)
+        messages.success(request, (f'Removed {room.room_title} from your bag'))
         request.session['bag'] = bag
-        return render(request, 'bag/bag.html')
-        print(delete_from_bag)
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)

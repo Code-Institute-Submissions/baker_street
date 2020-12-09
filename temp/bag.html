@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container general-text">
+  <div class="row">
+    <div class="col">
+      {% if bag_items %} {% for item in bag_items %} 
+      <p>Room: {{ item.room_title }}</p>
+      <p>Number of players: {{ item.num_of_players }} {{ edit_form.num_of_players }}</p>
+      <p>Date: {{ item.date }} {{ edit_form.date }}</p>
+      <p>Time: {{ item.time }} {{ edit_form.time }}</p>
+      <a class="btn btn-primary delete_item" id="delete_{{ item.item_id }}">Delete</a>
+      <a class="btn btn-primary edit_item" id="edit{{ item.item_id }}">Edit</a>
+      {% endfor %} {% else%}
+      <p>You have no bookings</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+$('.delete_item').click(function() {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('delete_')[1];
+        var url = `/bag/delete/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken}
+
+           $.post(url, data)
+            .done(function() {
+             location.reload();
+         });
+    })
+</script>
+{% endblock %}
+
+ 
