@@ -39,7 +39,6 @@ def bag_contents(request):
                 })
     context = {
         'bag_items': bag_items,
-        'room': room,
         'num_of_players': num_of_players,
         'date': date,
         'time': time,

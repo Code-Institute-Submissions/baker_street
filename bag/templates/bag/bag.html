@@ -4,7 +4,7 @@
 <div class="container general-text">
   <div class="row">
     <div class="col">
-      {% if bag_items %} {% for item in bag_items %} 
+      {% if bag_items %} {% for item in bag_items %} {{ bag_items }}
       <p>Room: {{ item.room }}</p>
       <p>Number of players: {{ item.num_of_players }}</p>
       <p>Date: {{ item.date }}</p>
@@ -19,18 +19,16 @@
 
 <script>
 $('.delete_item').click(function() {
-    var csrfToken = "{{ csrf_token }}";
-    var itemId = $(this).attr('id').split('delete_')[1];
-    var url = `/bag/delete/${itemId}/`;
-    var data = {'csrfmiddlewaretoken': csrfToken};
-    
-    $.post(url, data).done(function() {
-        console.log("post reached")
-        location.reload();
-    }).fail( function() {
-        console.log("post failed");
-    });
-});
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('delete_')[1];
+        var url = `/bag/delete/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken}
+
+           $.post(url, data)
+            .done(function() {
+             location.reload();
+         });
+    })
 </script>
 {% endblock %}
 
