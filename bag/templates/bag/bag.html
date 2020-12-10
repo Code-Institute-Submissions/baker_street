@@ -34,12 +34,11 @@
         </select>
         </form>  
       <a class="btn btn-primary delete_item" id="delete_{{ item.item_id }}">Delete</a>
-      {% endfor %} {% else%}
+      {% endfor %}
+       {% else%}
       <p>You have no bookings</p>
       {% endif %}
-            <!-- <p>Number of players: {{ item.num_of_players }} </p>
-      <p>Date: {{ item.date }} </p>
-      <p>Time: {{ item.time }} </p> -->
+
     </div>
   </div>
 </div>
