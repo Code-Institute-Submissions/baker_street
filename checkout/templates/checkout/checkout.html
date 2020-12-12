@@ -3,4 +3,27 @@
 {% load static %}
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        <div class="col general-text"><h1>Please fill out the form below </h1></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="{% url 'checkout' %}" method="POST">
+                {{ orderinfo.full_name | as_crispy_field}}
+                {{ orderinfo.email | as_crispy_field}}
+                {{ orderinfo.phone_number | as_crispy_field }}
+                {{ orderinfo.street_address1 | as_crispy_field}}
+                {{ orderinfo.street_address2 | as_crispy_field}}
+                {{ orderinfo.town_or_city | as_crispy_field}}
+                {{ orderinfo.county | as_crispy_field}}
+                {{ orderinfo.postcode | as_crispy_field}}
+                {{ orderinfo.country | as_crispy_field}}
+                {{ orderinfo.order_total | as_crispy_field}}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

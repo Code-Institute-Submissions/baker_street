@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from .forms import PersonalInfoOrder
 
 
 def checkout(request):
 
-    return render(request, 'checkout/checkout.html')
+    orderinfo = PersonalInfoOrder
+    context = {
+        'orderinfo': orderinfo
+    }
+    return render(request, 'checkout/checkout.html', context)
