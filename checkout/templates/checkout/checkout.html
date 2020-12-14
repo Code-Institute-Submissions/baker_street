@@ -8,8 +8,9 @@
         <div class="col general-text"><h1>Please fill out the form below </h1></div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col general-text">
             <form action="{% url 'checkout' %}" method="POST">
+                {% csrf_token %}
                 {{ orderinfo.full_name | as_crispy_field}}
                 {{ orderinfo.email | as_crispy_field}}
                 {{ orderinfo.phone_number | as_crispy_field }}
@@ -19,11 +20,18 @@
                 {{ orderinfo.county | as_crispy_field}}
                 {{ orderinfo.postcode | as_crispy_field}}
                 {{ orderinfo.country | as_crispy_field}}
-                {{ orderinfo.order_total | as_crispy_field}}
-                <input type="submit" value="Submit">
+                <a href="{% url 'payment' %}" class="btn btn-primary" id="cont_to_payment">Continue to payment</a>
             </form>
         </div>
     </div>
 </div>
-
+<div id="card-element" class="container">
+    <!-- <div class="row">
+        <div class="col general-text"></div>
+    </div> -->
+</div>
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
+
