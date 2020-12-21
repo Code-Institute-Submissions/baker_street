@@ -29,7 +29,7 @@ def add_to_bag(request, item_id):
     bag[item_id] = booking_details
 
     request.session['bag'] = bag
-    return redirect(reverse('bag'))
+    return redirect(reverse('checkout'))
 
 
 def delete_from_bag(request, item_id):
