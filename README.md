@@ -17,7 +17,14 @@
 * As a  member of staff I want to be able to Login and logout so that I can change available times, cancel/amend bookings and complete other administrative duties.
 
 ## Features
+### Navbar - This allows the user to easily navigate the site with single clicks. I feel that each list item in the navbar gives a good indication o what is to be expecting of the page it links to.
+* Home and 'logo links- both link to the 'Home' page which gives the user general information about the service provided, who it is aimed at and an FAQ section.
+* Our Rooms page- Gives a description of the backstor of each room and provides a button which links to that rooms individual booking page.
+* Book Now booking pages- Allows the user to book the selected room chossing a number of players, date and time they wish to play. Once complete the user can submit their choices and is taken to the next stage of the booking process which is to put in their personal details and card information.
+* Leaderboards page- This shows the user the top 3 best times that previous teams have completed each room in. This is editable from the admin page.
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+* Contact Us page- Page with contact info and opening hours for users. May add in a map
+* Log In page- Not yet functional
 
 Existing Features
 Feature 1 - allows users X to achieve Y, by having them fill out Z
@@ -32,5 +39,10 @@ Features Left to Implement
 ## Credits
 ### Content
 ### Media
+None of the images used are my own
+sherlock-holmes-shadow.jpg is from https://www.history.com/news/was-sherlock-holmes-based-on-a-real-person
+watson!_img.jpg, study_in_pink_img.jpg and moriarty_img.jpg all use the same background which is taken https://www.pinterest.co.uk/pin/839288080541763732/. The text overwritten was done by myself using the program Paint 3D
+
+I did not write in the location where I found this image initally and now cannot find it -parchment-background.jpg . This image is not my own and was taken from a now unknown source online.
 
 ### Acknowledgements

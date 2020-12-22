@@ -11,16 +11,18 @@
             <p>Number of players: {{ item.num_of_players }}</p>
             <p>Date: {{ item.date }}</p>
             <p>Time: {{ item.time }}</p>
-            
+
             {% endfor %}
-            <p>Total: €{{ total }}</p>
+            <h2>Total: €{{ total }}</h2>
             {% endif %}
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col general-text text-center"><h1>Please fill out the form below </h1></div>
+        <div class="col general-text text-center">
+            <h1>Please fill out the form below </h1>
+        </div>
     </div>
     <div class="row">
         <div class="col general-text">
@@ -35,7 +37,8 @@
                 {{ orderinfo.county | as_crispy_field}}
                 {{ orderinfo.postcode | as_crispy_field}}
                 {{ orderinfo.country | as_crispy_field}}
-                <a href="{% url 'payment' %}" class="btn btn-primary" id="cont_to_payment">Continue to payment</a>
+                <h3>Your card will be charged €{{ total }}</h3>
+
             </form>
         </div>
     </div>
@@ -47,7 +50,9 @@
             {{ client_secret|json_script:"id_client_secret" }}
             <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
         </div>
+    </div><br>
+    <div class="row">
+        <div class="col"><a href="{% url 'payment' %}" class="btn btn-primary" id="cont_to_payment">Submit</a></div>
     </div>
 </div>
 {% endblock %}
-
