@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+import datetime
 
 
 class Rooms(models.Model):
@@ -15,6 +17,11 @@ class Rooms(models.Model):
         return super().__str__()
 
 
+def min_date(date):
+    if date < datetime.now().date():
+        raise ValidationError("Date cannot be in the past")
+
+
 class Room_Booking(models.Model):
     NUM_PLAYERS = (
         (4, '4'),
@@ -24,7 +31,7 @@ class Room_Booking(models.Model):
         (8, '8'),
     )
     num_of_players = models.CharField(max_length=2, choices=NUM_PLAYERS)
-    date = models.DateField(blank=False, null=False)
+    date = models.DateField(blank=False, null=False, validators=[min_date])
     TIME_OPTIONS = (
         (1000, '1000'),
         (1130, '1130'),

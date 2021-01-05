@@ -18,15 +18,16 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col general-text text-center">
-            <h1>Please fill out the form below </h1>
+<form action="{% url 'checkout' %}" method="POST" id="payment-form">
+    <div class="container">
+        <div class="row">
+            <div class="col general-text text-center">
+                <h1>Please fill out the form below </h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col general-text">
-            <form action="{% url 'checkout' %}" method="POST">
+        <div class="row">
+            <div class="col general-text">
+
                 {% csrf_token %}
                 {{ orderinfo.full_name | as_crispy_field}}
                 {{ orderinfo.email | as_crispy_field}}
@@ -39,20 +40,22 @@
                 {{ orderinfo.country | as_crispy_field}}
                 <h3>Your card will be charged €{{ total }}</h3>
 
-            </form>
+
+            </div>
         </div>
     </div>
-</div>
-<div id="card-element" class="container">
-    <div class="row">
-        <div class="col general-text">
-            {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-            {{ client_secret|json_script:"id_client_secret" }}
-            <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    <div id="card-element" class="container">
+        <div class="row">
+            <div class="col general-text">
+                {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+                {{ client_secret|json_script:"id_client_secret" }}
+                <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button></div>
         </div>
-    </div><br>
-    <div class="row">
-        <div class="col"><a href="{% url 'payment' %}" class="btn btn-primary" id="cont_to_payment">Submit</a></div>
     </div>
-</div>
+</form>
 {% endblock %}
