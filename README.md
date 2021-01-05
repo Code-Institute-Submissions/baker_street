@@ -10,7 +10,7 @@
 * As a customer I want to be able to easily pay for my selected option so that I can decide if I would like to visit.
 * As a customer I want to be able to see what products the escape room has to offer so that I can visit the escape room by paying online in advance.
 *  As a customer I want to recieve an email when I have completed my booking so that I know that my booking was successful and be reminded of the time and date of my booked expeirence.
-* As a customer I want to be able to register an account so that I can access the areas only those with accounts can access, view my info .
+* As a customer I want to be able to register an account so that I can access the areas only those with accounts can access, view my info.
 * As a customer I want to recieve an email once I have registered for my account so that I know the registration ws successful.	
 * As a customer I want to be able to easily login and out of my acount to see my personal info, past/future bookings. See my score/time from previous visits
 * As a customer I would like to see a leaderboard so I can see what times other teams got so that I can compete with them
@@ -25,6 +25,22 @@
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 * Contact Us page- Page with contact info and opening hours for users. May add in a map
 * Log In page- Not yet functional
+
+## Design
+
+### Site theme   
+* The original idea for doing a site based on an escape room came from working in one myself a few years ago. As for a Sherlock Holmes theme, that from recently watching a Sherlcok Holmes series and the title of the escape room part from being where the character lived, it is also my last name.
+* Due to the choice of theme for the escape room, I wanted to give the site a Victorian look. This is why I have chosen the parchment background throughout and use Calligraffitti as the main font family as I felt it has the look of handwritting which suits the era as there were no computers.
+
+### Colour scheme
+* I chose a deep red (#8D0424) as the main colour for the headers and footers as I felt that it gave a plush feel and complemented the main background image. It also allowed the text in the navbar to stand out well. I used the same colour throughtout for the text to stay with a simple colour pallet and also because I felt it was easy to read against the background image.
+
+### Background
+* I originally decided to use a dirty white/ cream colour for my background as I felt it complimented the sites theme and would contrast nicely with the red and black. When searching for potential background images I settled upon parchment-background.jpg as I thought it's textured look and colour fitted the theme nicely and also worked well with the main colours I had chosen the navbar and text.
+
+### Images
+* I had originally envisioned 'Sherlock' related images of a deer stalker hat, magnifiying glass etc for the three rooms. However, when looking online, many of the images were either not appropriate or were too different in style, I couldn't find three that went nicely together. That is why I decided to use another parchment background with writting on them as if they were a note. This also tied in nicely with the game rooms themselves as all three rooms have a note or message as per their description. 
+* Currently, Rache has a different image that I intend to change.
 
 Existing Features
 Feature 1 - allows users X to achieve Y, by having them fill out Z
