@@ -3,34 +3,60 @@
 {% load static %}
 {% block content %}
 <div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <h2>Contact Us</h2>
+    <div class="row">
+        <div class="col">
+            <h2>Contact Us</h2>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <p>
-        To view our escape experiences and book a room, visit <a href="{% url 'our_rooms' %}">Our Rooms.</a> If you have a general
-        enquiry, please email us at bakerstreetescape@gmail.com or call us on
-        221b
-      </p>
+    <div class="row">
+        <div class="col">
+            <p>
+                To view our escape experiences and book a room, visit <a href="{% url 'our_rooms' %}">Our Rooms.</a> If
+                you have a general
+                enquiry, please email us at bakerstreetescape@gmail.com or call us on
+                221b
+            </p>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Opening Hours</h2>
-      <p>
-        Monday-Thursday: 10AM-9PM<br />
-        Firday-Sunday: 9AM-11PM
-      </p>
+    <div class="row">
+        <div class="col">
+            <h2>Opening Hours</h2>
+            <p>
+                Monday-Sunday: 9:30AM-11PM<br />
+            </p>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Where To Find Us</h2>
-      <p>Insert Map</p>
+    <div class="row">
+        <div class="col">
+            <h2>Where To Find Us</h2>
+            <p>221b Baker Street,<br>
+                Ballincollig,<br>
+                Co. Cork,<br>
+                Ireland<br>
+            </p>
+        </div>
     </div>
-  </div>
+    <div id="map" class="row">
+        <div class="col">
+        </div>
+    </div>
 </div>
+<script> 
+    function initMap() {
+        const baker_street = { lat: 51.886790, lng: -8.589785 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 16,
+            center: baker_street,
+        });
+        const label = 'Baker Street Escape Rooms'
+        const marker = new google.maps.Marker({
+            position: baker_street,
+            map: map,
+            label: label,
+        });
+    }
+</script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF7TZ_h-DZ9y4J4MQ4bKjetXmwuv46UgE&callback=initMap">
+    </script>
 {% endblock %}

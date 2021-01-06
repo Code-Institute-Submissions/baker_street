@@ -69,3 +69,4 @@ form.addEventListener('submit', function(ev) {
         location.reload();
     })
 });
+console.log(card)

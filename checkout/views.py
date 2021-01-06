@@ -1,10 +1,28 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  # noqa: E501
+from django.views.decorators.http import require_POST
 from .forms import PersonalInfoOrder
 from bag.contexts import bag_contents
 from bookings.forms import Booking
 from django.conf import settings
 from django.contrib import messages
 import stripe
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'bag': (request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -25,7 +43,10 @@ def checkout(request):
         }
         order_info = PersonalInfoOrder(form_data)
         if order_info.is_valid():
-            order_info.save()
+            order = order_info.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.save()
             for item_id, booking_details in bag.items():
                 room = get_object_or_404(Rooms, pk=item_id)
                 num_of_players = booking_details['num_of_players']
@@ -59,6 +80,8 @@ def checkout(request):
         print(intent)
         form = Booking()
         orderinfo = PersonalInfoOrder
+    if not stripe_public_key:
+        print("No public key")
     context = {
         'orderinfo': orderinfo,
         'edit_form': form,
