@@ -33,9 +33,9 @@
                     <option value="2200">2200</option>
                 </select>
 
-                <a class="btn btn-primary delete_item" id="delete_{{ item.item_id }}">Delete</a>
+                <a class="btn btn-danger delete_item" id="delete_{{ item.item_id }}">Delete</a>
                 <div class="row">
-                    <div class="col"><a href="{% url 'checkout' %}" id="cont_to_info" class="btn btn-primary">Continue</a></div>
+                    <div class="col"><a href="{% url 'checkout' %}" id="cont_to_info" class="btn btn-danger">Continue</a></div>
                 </div>
             </form>
             {% endfor %}

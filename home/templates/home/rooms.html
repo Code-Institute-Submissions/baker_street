@@ -5,14 +5,14 @@
 <div class="container text-center general-text">
   <div class="row">
     <div class="col">
-      <h1><u>Our Rooms</u></h1>
+      <h1 class="heading-text text-center">Our Rooms</h1>
     </div>
   </div>
-</div>
+</div><br><hr>
 <div class="container text-center general-text">
   <div class="row">
-    <div class="col-md-4">
-      <h2 id="watson_rooms"><u>Watson!</u></h2>
+    <div class="col-12">
+      <h2 id="watson_rooms" class="heading-text text-center">Watson!</h2>
     </div>
   </div>
   <div class="row">
@@ -22,7 +22,7 @@
       <p>
         Dr John Watson is a friend and assistant to the famous Sherlock Holmes. He arrives at Baker Street to find the man himself gone. The place has been ransacked and Holmes beloved violin is smashed. Amongst the wreckage, there is a note that simply says 'Watson, find me!'.  Ominous signs indeed! Has Sherlock been taken, or did he evade the intruders?  Assist Watson in his quest to find his friend before the unimaginable happens and Sherlock Holmes is gone forever!
       </p>
-      <a class="btn btn-primary" href="{% url 'book_a_room' 1 %}" id="watson_room_btn">See Room Availabailty and Book Now</a>
+      <a class="btn btn-danger" href="{% url 'book_a_room' 1 %}" id="watson_room_btn">See Room Availabailty and Book Now</a>
     </div>
   </div>
 </div>
@@ -31,17 +31,17 @@
 <div class="container text-center general-text">
   <div class="row">
     <div class="col-md-4">
-      <h2 id="study_in_pink_rooms"><u>A Study In Pink</u></h2>
+      <h2 id="study_in_pink_rooms" class="heading-text text-center">A Study In Pink</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4"><img src="{% static 'images/study_in_pink_img.jpg' %}" alt="Rache"></div>
+    <div class="col-md-4"><img src="{% static 'images/rache.jpg' %}" alt="Rache"></div>
     <div class="col-md-8">
     <br>
       <p>
         Sherlock Holmes has been called to an apparent murder scene where the only evidence seems to be the word 'Rache' scrawled on the wall. He must delve into the mystery and solve the crime before the time runs out, and the killer escapes!! Join Holmes and assist him in a classic tale with a twist!
       </p>
-      <a class="btn btn-primary" href="{% url 'book_a_room' 2 %}" id="pink_room_btn">See Room Availabailty and Book Now</a>
+      <a class="btn btn-danger" href="{% url 'book_a_room' 2 %}" id="pink_room_btn">See Room Availabailty and Book Now</a>
     </div>
   </div>
 </div>
@@ -50,17 +50,17 @@
 <div class="container text-center general-text">
   <div class="row">
     <div class="col-md-4">
-     <a id="moriarty_rooms"><h2><u>Moriartys Madness</u></h2></a>
+     <a id="moriarty_rooms"><h2 class="heading-text text-center">Moriartys Madness</h2></a>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4"><img src="{% static 'images/moriarty_img.jpg' %}" alt="Moriarty"></div>
+    <div class="col-md-4"><img src="{% static 'images/moriarty.jpg' %}" alt="Moriarty"></div>
     <div class="col-md-8">
     <br>
       <p>
        James Moriarty is a ruthless criminal mastermind and Holmes nemesis. Sherlock is on the trail of Moriarty once again, but none of the evidence adds up. Then, out of the blue, a note arrives at Baker Street giving our detective the lead he has been searching for. Join Sherlock Holmes and assist him in unravelling what might be his most challenging case yet!
       </p>
-      <a class="btn btn-primary" href="{% url 'book_a_room' 3 %}" id="moriarty_room_btn">See Room Availabilty and Book Now</a>
+      <a class="btn btn-danger" href="{% url 'book_a_room' 3 %}" id="moriarty_room_btn">See Room Availabilty and Book Now</a>
     </div>
   </div>
 </div>

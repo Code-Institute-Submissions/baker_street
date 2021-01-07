@@ -2,7 +2,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col general-text">{{ room_title }}</div>
+    <div class="col heading-text text-center">{{ room_title }}</div>
   </div>
 </div>
 <div class="container">
@@ -13,8 +13,8 @@
         method="POST"
         class="general-text"
       >
-        {% csrf_token %} {{ form.num_of_players }} {{ form.date }} {{ form.time }}
-        <input type="submit" />
+        {% csrf_token %} {{ form.num_of_players | as_crispy_field }} {{ form.date | as_crispy_field}} {{ form.time | as_crispy_field}}
+        <input class="btn btn-danger" type="submit" />
       </form>
     </div>
   </div>
