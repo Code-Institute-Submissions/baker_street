@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Leaderboards
+from django.conf import settings
 
 
 def index(request):
@@ -11,7 +12,11 @@ def our_rooms(request):
 
 
 def contact(request):
-    return render(request, 'home/contact.html')
+    map_api = settings.GOOGLE_MAP_API
+    context = {
+        map_api: 'map_api'
+    }
+    return render(request, 'home/contact.html', context)
 
 
 def leaderboards(request):

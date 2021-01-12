@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<div class="container">
+<div class="container text-center general-text">
   <div class="row">
     {% for room in room_info %}
-    <div class="col-3">{{ room.room_title }}</div>
-    <div class="col-3">€{{ room.price }} per person</div>
-    <div class="col-4">{{ room.room_description }}</div>
-    <div class="col-4">{{ room.room_image }}</div>
+    <div class="col-2">{{ room.room_title }}</div>
+    <div class="col-1">€{{ room.price }} per person</div>
+    <div class="col-3">{{ room.room_description }}</div>
+    <div class="col-4"><img src="{{ room.room_image.url }}" alt=""> </div>
     <div class="col-2"><a class="btn btn-danger" href="{% url 'book_a_room' room.id%}">Select Room</a></div>
     {% endfor %}
   </div>
