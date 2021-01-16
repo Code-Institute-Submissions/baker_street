@@ -2,7 +2,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col heading-text text-center">{{ room_title }}</div>
+    <div class="col-12 col-md-4 heading-text text-center">{{ room_title }}</div>
+    <div class="col-12 col-md-4 heading-text text-center">{{ description }}</div>
+    <div class="col-12 col-md-4"><a href="{{ room_image.url }}"><img class="booking_img" src="{{ room_image.url }}" alt=""> </a></div>
   </div>
 </div>
 <div class="container">

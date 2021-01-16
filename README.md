@@ -23,8 +23,12 @@
 * Book Now booking pages- Allows the user to book the selected room chossing a number of players, date and time they wish to play. Once complete the user can submit their choices and is taken to the next stage of the booking process which is to put in their personal details and card information.
 * Leaderboards page- This shows the user the top 3 best times that previous teams have completed each room in. This is editable from the admin page.
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
-* Contact Us page- Page with contact info and opening hours for users. May add in a map
+* Contact Us page- Page with contact info and opening hours for users. I have also added a map using google maps api- see below.
 * Log In page- Not yet functional
+
+### Google Map
+* I added a Google map to the contacts page as it is something a customer would expect when booking to visit a location. The address itself is fake but is on Baker Street in Ballincollig as it states on the contact page. This choice was a nod to the name of the Escape Room and also a viable rough location if this was for a real escape room.
+* Currently the map does not function perfectly. While you can still see the map fairly well, it is greyed out and has a 'for development purposes only' watermark. 
 
 ## Design
 
@@ -62,3 +66,6 @@ watson!_img.jpg, study_in_pink_img.jpg and moriarty_img.jpg all use the same bac
 I did not write in the location where I found this image initally and now cannot find it -parchment-background.jpg . This image is not my own and was taken from a now unknown source online.
 
 ### Acknowledgements
+
+
+This project is for educational purposes only.

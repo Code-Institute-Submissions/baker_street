@@ -33,6 +33,14 @@
 }
 img{
     max-width: 100%;
+    height: auto;
+    width: 200px; 
+}
+.booking_img{
+    max-width: 100%;
+    height: auto;
+    width: 200px; 
+    margin-left: 25%;
 }
 .navbar{
    background-color: #8D0424;

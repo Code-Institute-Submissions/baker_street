@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container"><div class="row"><div class="col">Success!</div></div>
+<div class="row"><div class="col">Your order was successful. An email will be sent to {{order.email}}</div></div>
+</div>
+{% endblock %}
