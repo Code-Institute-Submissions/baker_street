@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from django.conf import settings
+from django_countries.fields import CountryField
 
 
 class Order_Personal_Info(models.Model):
@@ -13,9 +13,9 @@ class Order_Personal_Info(models.Model):
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     county = models.CharField(max_length=80, null=True, blank=True)  # noqa:DJ01, E501
     postcode = models.CharField(max_length=20, null=True, blank=True)  # noqa:DJ01, E501
-    country = models.CharField(max_length=40, null=False, blank=False)
+    country = CountryField(null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # noqa: E501
 
     def _generate_order_number(self):
         """
