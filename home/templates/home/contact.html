@@ -17,7 +17,10 @@
                 221b
             </p>
         </div>
-    </div><hr>
+    </div>
+</div>
+<hr>
+<div class="container text-center general-text">
     <div class="row">
         <div class="col">
             <h2 class="heading-text text-center">Opening Hours</h2>
@@ -25,7 +28,10 @@
                 Monday-Sunday: 9:30AM-11PM<br />
             </p>
         </div>
-    </div><hr>
+    </div>
+</div>
+<hr>
+<div class="container text-center general-text">
     <div class="row">
         <div class="col">
             <h2 class="heading-text text-center">Where To Find Us</h2>
@@ -36,12 +42,17 @@
             </p>
         </div>
     </div>
+</div>
+<div class="container">
     <div id="map" class="row">
         <div class="col">
         </div>
     </div>
 </div>
-<script> 
+{% endblock %}
+
+{% block postloadjs%}
+<script>
     function initMap() {
         const baker_street = { lat: 51.886790, lng: -8.589785 };
         const map = new google.maps.Map(document.getElementById("map"), {
@@ -56,7 +67,6 @@
         });
     }
 </script>
-<script defer
-    src="https://maps.googleapis.com/maps/api/js?key={{map_api}}&callback=initMap">
-    </script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key={{map_api}}&callback=initMap">
+</script>
 {% endblock %}

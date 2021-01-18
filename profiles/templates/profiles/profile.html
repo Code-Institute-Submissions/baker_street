@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col heading-text text-center">
+            <h2>My Profile</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col general-text text-center">
+            <h3>Your Booked Rooms</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col general-text text-center"> 
+            {% for order in orders%}
+                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatedchars:6}}</a>
+                {{order.date}}
+                {{order.total}}
+            {% endfor%}
+            {% for item%}
+        </div>
+    </div>
+</div>
+{% endblock %}

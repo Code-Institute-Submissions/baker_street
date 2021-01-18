@@ -45,13 +45,7 @@ In this section, you should go over the different parts of your project, and des
 ### Images
 * I had originally envisioned 'Sherlock' related images of a deer stalker hat, magnifiying glass etc for the three rooms. However, when looking online, many of the images were either not appropriate or were too different in style, I couldn't find three that went nicely together. That is why I decided to use another parchment background with writting on them as if they were a note. This also tied in nicely with the game rooms themselves as all three rooms have a note or message as per their description. 
 
-
-Existing Features
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+## Testing
 
 Features Left to Implement
 

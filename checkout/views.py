@@ -25,9 +25,7 @@ def checkout(request):
         }
         print(form_data)
         orderinfo = PersonalInfoOrder(form_data)
-        print(f"orderinfo is \n{orderinfo}")
         if orderinfo.is_valid():
-            print("order form is valid")
             order = orderinfo.save()
             return redirect(reverse('checkout_success', args=[order.order_number]))  # noqa: E501
 

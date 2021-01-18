@@ -14,7 +14,7 @@ def our_rooms(request):
 def contact(request):
     map_api = settings.GOOGLE_MAP_API
     context = {
-        map_api: 'map_api'
+        map_api: map_api
     }
     return render(request, 'home/contact.html', context)
 

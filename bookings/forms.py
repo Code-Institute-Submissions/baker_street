@@ -7,12 +7,10 @@ class ViewCalendar(forms.DateInput):
     input_type = 'date'
 
 
-today = datetime.today().strftime('%Y-%m-%d')
-
-
 class Booking(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(Booking, self).__init__(*args, **kwargs)
+        today = datetime.today().strftime('%Y-%m-%d')
         self.fields['date'].widget.attrs['min'] = today
 
     class Meta:
