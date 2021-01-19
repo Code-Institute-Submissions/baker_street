@@ -10,5 +10,3 @@ def profile(request):
         'orders': orders,
     }
     return render(request, 'profiles/profile.html', context)
-
-
