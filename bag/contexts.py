@@ -10,7 +10,6 @@ def bag_contents(request):
     date = 0
     time = 0
     bag = request.session.get('bag', {})
-    print(bag)
     for item_id, booking_details in bag.items():
         room = get_object_or_404(Rooms, pk=item_id)
         num_of_players = booking_details['num_of_players']
