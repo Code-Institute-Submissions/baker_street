@@ -18,6 +18,7 @@ class Order_Personal_Info(models.Model):
     country = CountryField(null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # noqa: E501
+    original_bag = models.CharField(max_length=200, null=True, blank=True)  # noqa:DJ01, E501
 
     def _generate_order_number(self):
         """

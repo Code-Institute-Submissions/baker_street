@@ -45,8 +45,34 @@ In this section, you should go over the different parts of your project, and des
 ### Images
 * I had originally envisioned 'Sherlock' related images of a deer stalker hat, magnifiying glass etc for the three rooms. However, when looking online, many of the images were either not appropriate or were too different in style, I couldn't find three that went nicely together. That is why I decided to use another parchment background with writting on them as if they were a note. This also tied in nicely with the game rooms themselves as all three rooms have a note or message as per their description. 
 
-## Testing
-
+## Deployment
+ * I chose to use Heroku to deploy my site. Deployed site- https://baker-street-escaperoom.herokuapp.com/
+ * To do this I logged into Heroku my account, created   the app and connected it to my GitHub repository directly through Heroku. As Heroku dos not deal with static files I set up an account with Amazon Web Services to handle these. 
+ * Within AWS(Amazon Web Services), I used the S3 service and created a 'bucket' to store my files and named it the same as my heroku app, setting the region of er-west-1, unblocked Public Access and then created the bucket. I turned on static website hosting in the proporties tab. In the permissions tab, I pasted in a CORS configuration provided by Code Institue which sets up the access between my Heroku and this bucket. I had to create a security policy using the AWS policy generator. Finally, in the Access Control List tab and set the list objects permission to Everyone.
+ * I need to create a user to access the created bucket, using IAM(Identity and Access Management). I created a group for the user to live in, then an access policy granting the group access to the S3 bucket and then create the user and assign them to the group to use the policy to access the static files.
+ * To connect django to the S3 bucket, I installed boto3 and django-storages and added storages to seetings.py installed apps. I set up an if statment in settings.py to only use the AWS keys that had been set as config vars in Heroku, on the Heroku app. 
+ * AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com' tells django where the static files are coming from.
+ * Here is a link to my GitHub repo- https://github.com/NickBaker11/baker_street
+## Testing 
+#### As part of my testing I will use the User stories as a base
+1. As a customer I want to be able to easily navigate the site so that I can enjoy my experience on the website.
+  * To test the navigation of my site, I manually clicked on each desired link to see if it would take me to the kind of page I desired. I also asked friends to take themselves through the site to test navigation and they found it a smooth experience.
+2. As a customer I want to be able to see what products the escape room has to offer so that I can decide if I would like to visit.
+  * Click into Our Rooms on the navabar. The user is taken to Our Rooms page which gives a backstory to each of the three rooms or products that the site offers.
+3. As a customer I want to be able to view the escape room experience options and available dates and times so that I can book an escape room experience on the date and time I would like.
+ * Click into Our Rooms on the navabr and select the desired room or select the desired room from the three choices in the Book Now dropdown in the navbar. 
+ * Once the user has chosen the desired room, they can go into the date and time dropdowns which will show what is available. 
+4. As a customer I want to be able to easily pay for my selected option so that I can decide if I would like to visit.
+   * Click into Our Rooms on the navabr and select the desired room or select the desired room from the three choices in the Book Now dropdown in the navbar. 
+  * Select a choice from each of the three options, number of players, date and time then hit submit. If any of the forms are not filled in and you hit submit, a warning will pop up asking you to fill out the incomplete field. With all fields filled, hit submit.
+  * You are then taken to the checkout page. You have to fill in each form section. Currently, if you hit submit the form will not go through, however, there is no warning box for the specific form line not filled in. Once all of the form lines are filled in and you hit submit, the form posts and the user is taken to the success_checkout page which currently has a short message saying an email will be sent to the one the user input into the form.
+5. As a customer I want to be able to register an account so that I can access the areas only those with accounts can access, view my info.
+ * Click on 'Login' in the navbar, click on 'Register' in the dropdown. Fill in the form with the requested details and hit 'Sign Up'.
+*  As a customer I want to recieve an email when I have completed my booking so that I know that my booking was successful and be reminded of the time and date of my booked expeirence.
+* As a customer I want to recieve an email once I have registered for my account so that I know the registration ws successful.	
+* As a customer I want to be able to easily login and out of my acount to see my personal info, past/future bookings. See my score/time from previous visits
+* As a customer I would like to see a leaderboard so I can see what times other teams got so that I can compete with them
+* As a  member of staff I want to be able to Login and logout so that I can change available times, cancel/amend bookings and complete other administrative duties.
 Features Left to Implement
 
 

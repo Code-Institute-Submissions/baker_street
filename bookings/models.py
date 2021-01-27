@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 import datetime
+from checkout.models import Order_Personal_Info
 
 
 class Rooms(models.Model):
@@ -44,6 +45,7 @@ class Room_Booking(models.Model):
         (2200, '2200'),
     )
     time = models.TimeField(blank=False, null=False, choices=TIME_OPTIONS)
+    order = models.ForeignKey(Order_Personal_Info, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')  # noqa: E501
 
     def __str__(self):
         return super().__str__()

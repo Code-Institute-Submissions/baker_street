@@ -1,10 +1,31 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  # noqa: E501
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PersonalInfoOrder
 from .models import Order_Personal_Info
+from profiles.models import UserProfile
+from bookings.models import Room_Booking
 from bag.contexts import bag_contents
 from django.conf import settings
 import stripe
+import json
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'bag': json.dumps(request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -23,10 +44,11 @@ def checkout(request):
             'postcode': request.POST['postcode'],
             'country': request.POST['country'],
         }
-        print(form_data)
         orderinfo = PersonalInfoOrder(form_data)
         if orderinfo.is_valid():
             order = orderinfo.save()
+            order.original_bag = json.dumps(bag)
+            order.save()
             return redirect(reverse('checkout_success', args=[order.order_number]))  # noqa: E501
 
     else:
@@ -44,7 +66,6 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
         orderinfo = PersonalInfoOrder()
-
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing')
     context = {
@@ -57,11 +78,15 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     order = get_object_or_404(Order_Personal_Info, order_number=order_number)  # noqa: E501
-    messages.success(request, f'Your order was successful. Your oder number is {order_number}. A confirmation email will be sent to {order.email}. We look forward to seeing you')  # noqa: E501
-
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
     if 'bag' in request.session:
         del request.session['bag']
     context = {
         'order': order,
+        'profile': profile
     }
     return render(request, 'checkout/checkout_success.html', context)

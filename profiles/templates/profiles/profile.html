@@ -11,17 +11,22 @@
     </div>
     <div class="row">
         <div class="col general-text text-center">
+            <h3>{{ profile_name }}</h3>
             <h3>Your Booked Rooms</h3>
         </div>
     </div>
     <div class="row">
         <div class="col general-text text-center"> 
-            {% for order in orders%}
-                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatedchars:6}}</a>
-                {{order.date}}
-                {{order.total}}
+            {% if orders %}
+            {% for order in orders %}
+                <p>Room Name: {{room_title}} </p>
+                <p>Number of Players: {{num_of_players}}</p>
+                <p>Game Time: {{date}} </p>
+                <p>Game Date:{{time}} </p>
             {% endfor%}
-            {% for item%}
+            {% else %}
+            <p>You have no previous bookings.</p>
+            {% endif%}
         </div>
     </div>
 </div>
