@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import UserProfile
-from bookings.models import Room_Booking
 from bookings.models import Rooms
 import json
 

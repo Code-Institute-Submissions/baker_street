@@ -12,9 +12,9 @@ def our_rooms(request):
 
 
 def contact(request):
-    map_api = settings.GOOGLE_MAP_API
+    GOOGLE_MAP_API = settings.GOOGLE_MAP_API
     context = {
-        map_api: map_api
+        'GOOGLE_MAP_API': GOOGLE_MAP_API
     }
     return render(request, 'home/contact.html', context)
 

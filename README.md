@@ -28,17 +28,24 @@ In this section, you should go over the different parts of your project, and des
 
 ### Google Map
 * I added a Google map to the contacts page as it is something a customer would expect when booking to visit a location. The address itself is fake but is on Baker Street in Ballincollig as it states on the contact page. This choice was a nod to the name of the Escape Room and also a viable rough location if this was for a real escape room.
-* Currently the map does not function perfectly. While you can still see the map fairly well, it is greyed out and has a 'for development purposes only' watermark. 
+* ~~Currently the map does not function perfectly. While you can still see the map fairly well, it is greyed out and has a 'for development purposes only' watermark.~~ This issue was caused by not having my env variable set properly and then not changing the var name in the view when it was changed in settings and in the contact.html file.
 
+### Login/Register
+* This feature was setup using Allauth which was downloaded through the terminal. I edited the allauth templates so that they would suit the styling of the rest of the site.
+* 
 ## Design
 
 ### Site theme   
 * The original idea for doing a site based on an escape room came from working in one myself a few years ago. As for a Sherlock Holmes theme, that from recently watching a Sherlcok Holmes series and the title of the escape room part from being where the character lived, it is also my last name.
-* Due to the choice of theme for the escape room, I wanted to give the site a Victorian look. This is why I have chosen the parchment background throughout and use Calligraffitti as the main font family as I felt it has the look of handwritting which suits the era as there were no computers.
+* Due to the choice of theme for the escape room, I wanted to give the site a Victorian look. This is why I have chosen the parchment background throughout and use Calligraffitti as the main font family as I felt it has the look of handwritting which suits the era as there were no computers. 
+
+### Font family
+* I found that Calligraffitti font suited the site well for it's theme whilst also being easy to read. During testing I found that changing the general-text which is everything but the headers and sub headers to black improved readability across the site. Beacuse of the main background the red colour could be difficult for some.
+* I also chose to bolden the navbar and navbar dropdown text on hover to make it easier for the user to discern what their pointer is focused on.
 
 ### Colour scheme
 * I chose a deep red (#8D0424) as the main colour for the headers and footers as I felt that it gave a plush feel and complemented the main background image. It also allowed the text in the navbar to stand out well. I used the same colour throughtout for the text to stay with a simple colour pallet and also because I felt it was easy to read against the background image.
-
+* For  standalone buttons on the site, I chose Bootstraps 'danger' class for colour so they would still be in keeping with the rest of the sites colour scheme whilst being different enough to stand out.
 ### Background
 * I originally decided to use a dirty white/ cream colour for my background as I felt it complimented the sites theme and would contrast nicely with the red and black. When searching for potential background images I settled upon parchment-background.jpg as I thought it's textured look and colour fitted the theme nicely and also worked well with the main colours I had chosen the navbar and text.
 
@@ -53,6 +60,7 @@ In this section, you should go over the different parts of your project, and des
  * To connect django to the S3 bucket, I installed boto3 and django-storages and added storages to seetings.py installed apps. I set up an if statment in settings.py to only use the AWS keys that had been set as config vars in Heroku, on the Heroku app. 
  * AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com' tells django where the static files are coming from.
  * Here is a link to my GitHub repo- https://github.com/NickBaker11/baker_street
+ 
 ## Testing 
 #### As part of my testing I will use the User stories as a base
 1. As a customer I want to be able to easily navigate the site so that I can enjoy my experience on the website.
@@ -68,24 +76,31 @@ In this section, you should go over the different parts of your project, and des
   * You are then taken to the checkout page. You have to fill in each form section. Currently, if you hit submit the form will not go through, however, there is no warning box for the specific form line not filled in. Once all of the form lines are filled in and you hit submit, the form posts and the user is taken to the success_checkout page which currently has a short message saying an email will be sent to the one the user input into the form.
 5. As a customer I want to be able to register an account so that I can access the areas only those with accounts can access, view my info.
  * Click on 'Login' in the navbar, click on 'Register' in the dropdown. Fill in the form with the requested details and hit 'Sign Up'.
-*  As a customer I want to recieve an email when I have completed my booking so that I know that my booking was successful and be reminded of the time and date of my booked expeirence.
+ *  As a customer I want to recieve an email when I have completed my booking so that I know that my booking was successful and be reminded of the time and date of my booked expeirence.
+6. As a customer I would like to see a leaderboard so I can see what times other teams got so that I can compete with them
+ * On the navbar, click on the 'leaderbords' link. This bring the user to the Leaderboards page that shows the 3 best scroes for each room. Of course, this not being a real escape room, these times are made up.
 * As a customer I want to recieve an email once I have registered for my account so that I know the registration ws successful.	
-* As a customer I want to be able to easily login and out of my acount to see my personal info, past/future bookings. See my score/time from previous visits
-* As a customer I would like to see a leaderboard so I can see what times other teams got so that I can compete with them
-* As a  member of staff I want to be able to Login and logout so that I can change available times, cancel/amend bookings and complete other administrative duties.
-Features Left to Implement
+* As a customer I want to be able to easily login and out of my acount to see my personal info, past/future bookings. 
 
+## Technologies used
+* Bootsrap is used throughout the site, mainly assisting with layout grids and breakpoints. https://getbootstrap.com/docs/5.0/getting-started/introduction/
+* Stripe is used for the ecommerce, allowing users to proccess a fake card payment. https://stripe.com/en-ie
+
+## Features to implement in the future
+* 
+
+## Issues
 
 ## Credits
 ### Content
+
 ### Media
 None of the images used are my own
-sherlock-holmes-shadow.jpg is from https://www.history.com/news/was-sherlock-holmes-based-on-a-real-person
-watson!_img.jpg, study_in_pink_img.jpg and moriarty_img.jpg all use the same background which is taken https://www.pinterest.co.uk/pin/839288080541763732/. The text overwritten was done by myself using the program Paint 3D
-
-I did not write in the location where I found this image initally and now cannot find it -parchment-background.jpg . This image is not my own and was taken from a now unknown source online.
+* sherlock-holmes-shadow.jpg is from https://www.history.com/news/was-sherlock-holmes-based-on-a-real-person
+* watson!_img.jpg, study_in_pink_img.jpg and moriarty_img.jpg all use the same background which is taken https://www.pinterest.co.uk/pin/839288080541763732/. The text overwritten was done by myself using the program Paint 3D
+* I did not write in the location where I found this image initally and now cannot find it -parchment-background.jpg . This image is not my own and was taken from a now unknown source online.
 
 ### Acknowledgements
-
+* Code Institues Boutique Ado provided lots of guidance on this project in terms of how to lay things out, what downloads were needed to make certain thing work such as AWS, and how to set up Stripe.
 
 This project is for educational purposes only.

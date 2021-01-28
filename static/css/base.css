@@ -46,13 +46,21 @@ img{
    background-color: #8D0424;
    padding: 0;
 }
-.navbar-brand{
-    font-size: 32px;
-}
 .nav-link, .navbar-brand, .dropdown-item{
     color: black;
      font-family: 'Calligraffitti', cursive;
     font-size: 130%;
+}
+.nav-item a:hover{
+    font-weight: bolder;
+}
+.dropdown-menu{
+    background-color: #8D0424;
+}
+.dropdown-menu a:hover {
+    background-color: #8D0424;
+    background-image: none;
+    font-weight: bolder;
 }
 .links:hover{
     color: black;

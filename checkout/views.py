@@ -4,7 +4,6 @@ from django.contrib import messages
 from .forms import PersonalInfoOrder
 from .models import Order_Personal_Info
 from profiles.models import UserProfile
-from bookings.models import Room_Booking
 from bag.contexts import bag_contents
 from django.conf import settings
 import stripe
