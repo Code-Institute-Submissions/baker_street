@@ -10,24 +10,6 @@
     <div class="row">
         <div class="col">Your order was successful. An email will be sent to {{order.email}}</div>
     </div>
-    <div class="row">
-        <div class="col">
-           {% if bag_items %} {% for item in bag_items %}
-            <h2>Your booking</h2>
-            <p>Room: {{ item.room_title }}</p>
-            <p>Number of players: {{ item.num_of_players }}</p>
-            <p>Date: {{ item.date }}</p>
-            <p>Time: {{ item.time }}</p>
-
-            {% endfor %}
-            <h2>Total: €{{ total }}</h2>
-            {% endif %}
-                {{date}}
-                {{time}}
-                {{ num_of_players}}
-                €{{total}}
-        </div>
-    </div>
 </div>
 
 {% endblock %}

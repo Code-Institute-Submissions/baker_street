@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-md-4 heading-text text-center">{{ room_title }}</div>
-    <div class="col-12 col-md-4 heading-text text-center">{{ description }}</div>
-    <div class="col-12 col-md-4"><a href="{{ room_image.url }}"><img class="booking_img" src="{{ room_image.url }}" alt=""> </a></div>
-  </div>
+    <div class="row">
+        <div class="col-12 col-md-4 heading-text text-center">{{ room_title }}</div>
+        <div class="col-12 col-md-4 heading-text text-center">{{ description }}</div>
+        <div class="col-12 col-md-4"><a href="{{ room_image.url }}"><img class="booking_img" src="{{ room_image.url }}"
+                    alt=""> </a></div>
+    </div>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <form
-        action="{% url 'add_to_bag' id %}"
-        method="POST"
-        class="general-text"
-      >
-        {% csrf_token %} {{ form.num_of_players | as_crispy_field }} {{ form.date | as_crispy_field}} {{ form.time | as_crispy_field}}
-        <input class="btn btn-danger" type="submit" />
-      </form>
+    <div class="row">
+        <div class="col">
+            <form action="{% url 'add_to_bag' id %}" method="POST" class="general-text">
+                {% csrf_token %} {{ form.num_of_players | as_crispy_field }} {{ form.date | as_crispy_field}}
+                {{ form.time | as_crispy_field}}
+                <input class="btn btn-danger" type="submit" />
+            </form>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col">
+            <h3 class="general-text">If you want to make a booking for today, please contact our office.<br>Due to our system setup, you can only book one of each room per booking</h3>
+        </div>
+    </div>
 </div>
 {% endblock %}

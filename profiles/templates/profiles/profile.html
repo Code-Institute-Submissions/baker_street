@@ -18,12 +18,10 @@
     <div class="row">
         <div class="col general-text text-center"> 
             {% if orders %}
-            {% for order in orders %}
                 <p>Room Name: {{room_title}} </p>
                 <p>Number of Players: {{num_of_players}}</p>
-                <p>Game Time: {{date}} </p>
-                <p>Game Date:{{time}} </p>
-            {% endfor%}
+                <p>Game Time: {{time}} </p>
+                <p>Game Date:{{date}} </p>
             {% else %}
             <p>You have no previous bookings.</p>
             {% endif%}
